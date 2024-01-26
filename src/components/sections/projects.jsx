@@ -1,11 +1,14 @@
-import React from 'react'
-
+import React from "react";
+import Header from "../ui/header";
+import ProjectList from "../cards/projects/projectList";
 function Projects() {
   return (
-    <div>
-      Projects
+    <div id="projects" className="bg-gradient-to-r from-black to-blue h-full pt-20">
+      <Header text="My Projects" />
+      <ProjectList />
+    
     </div>
-  )
+  );
 }
 
-export default Projects
+export default Projects;

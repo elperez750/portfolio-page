@@ -3,8 +3,7 @@ import React from "react";
 function DescriptionListCard( {image, title, description }) {
   return (
     <>
-     <div className="my-10 flex flex-col items-center"> {/* Flex column container */}
-      {/* Overlapping Squares */}
+     <div className="my-10 flex flex-col items-center"> 
       <div className="flex -space-x-12 -space-y-3">
         <div className="flex flex-col bg-red z-10 h-16 w-16 rounded-md justify-center items-center">
           <img src={image} className="h-14 w-14" alt="Description" />

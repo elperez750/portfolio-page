@@ -7,12 +7,12 @@ import DescriptionList from "../cards/description/descriptionList";
 function Home() {
   return (
     <>
-    <div className="h-full">
-      <div className="relative flex justify-center items-center bg-cover w-full h-[32rem] bg-black">
+    <div>
+      <div id="home" className="relative flex justify-center items-center bg-cover w-full h-[37rem] bg-black">
 
         <div className="absolute inset-0">
                 <img src={cssBackground} 
-                    className="w-full h-full object-cover filter blur-sm" 
+                    className="w-full h-full object-cover filter blur-md" 
                     alt="Background" />
             </div>
         
@@ -24,12 +24,12 @@ function Home() {
           <h1 className='font-futura text-dark_gray'>Hi, my name is</h1>
           <h1 className='text-red font-futura_bold'>Elliott</h1>
           <h1 className='font-futura_bold'>Aspiring Software Developer</h1>
-          <Button />
+          <Button text="Contact Me" />
           <SocialList />
         </div>
 
       </div>
-      <div className="bg-gradient-to-r from-blue to-black h-screen">
+      <div className="bg-blue">
         <DescriptionList />
       </div>
       </div>

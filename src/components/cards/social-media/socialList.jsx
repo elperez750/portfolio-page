@@ -1,9 +1,9 @@
 import React from 'react'
 import SocialCards from './socialCards'
 
-import linkedin from "/images/linkedin.png"
-import github from "/images/github.png"
-import instagram from "/images/instagram.png"
+import linkedin from "/images/socials/linkedin.png"
+import github from "/images/socials/github.png"
+import instagram from "/images/socials/instagram.png"
 
 function SocialList() {
   return (

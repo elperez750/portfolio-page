@@ -1,10 +1,10 @@
 import React from 'react'
 
-function Button() {
+function Button({text}) {
   return (
-    <div>
-      <button className='bg-red px-10 py-4 rounded-sm font-futura_bold text-xl'>Contact Me</button>
-    </div>
+  
+      <button className='bg-red px-10 py-4 rounded-sm font-futura_bold text-xl'>{text}</button>
+  
   )
 }
 

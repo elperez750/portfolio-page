@@ -10,23 +10,28 @@ function App() {
   return (
     <>
       <div>
-        <div className="h-screen bg-blue-500">
+        <div className="h-full ">
           <Navbar />
           <Home />
         </div>
 
-        <div className="h-screen">
+        <div className="h-full">
           <About />
         </div>
       
+       
+       
+    <div className="h-full">
+      <Projects />
+    </div>
+        
+
         <div className="h-screen">
           <Contact />
         </div>
 
-        <Projects />
-        <Contact />
         <Footer />
-      </div>
+        </div>
     </>
   );
 }
