@@ -20,20 +20,17 @@ function App() {
         <div className="h-full">
           <About />
         </div>
-      
-       
-       
-    <div className="h-full">
-      <Projects />
-    </div>
-        
-
-        <div className="h-screen">
+        <div className="h-full">
+          <Projects />
+        </div>
+        <div className="h-full">
           <Contact />
         </div>
+        <div className="h-full">
+          <Footer />
+        </div>
 
-        <Footer />
-        </div> 
+       </div>
     </>
   );
 }
