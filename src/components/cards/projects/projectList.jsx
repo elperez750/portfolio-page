@@ -132,18 +132,21 @@ const projects = [
         title: "Sucasa",
         image: sucasa,
         languages: languagesSucasa,
+        description: "Sucasa is a website that introduces and explains the process of painting with the company Sucasa Paint and Roofcare. The website is built using HTML, CSS, TypeScript, and Bootstrap.",
     },
     {
         id:2,
         title: "SmartBrain",
         image: smartbrain,
         languages: languagesSmartbrain,
+        description: "Smart Brain is a web application that allows users to upload celebrity photos where the AI can detect the celebrities in the photo. The application is built using React, NodeJS, HTML, and CSS."
     },
     {
         id:3,
         title: "Crown Clothing",
         image: crownclothing,
         languages: languagesCrownclothing,
+        description: "Ecommerce website with all kinds of products. Crown Clothing is a website where you can find all kinds of clothing you want to buy. Organized into easily navigable categories and subcategories"
     },
     
     
@@ -155,9 +158,9 @@ const projects = [
 
 function ProjectList() {
   return (
-    <div className="flex space-between gap-10 justify-evenly mt-20">
+    <div className="flex space-between gap-10 justify-evenly mt-5">
         {projects.map(project => (
-            <ProjectCard key={project.id} title={project.title} image={project.image} languages={project.languages}/>
+            <ProjectCard key={project.id} title={project.title} image={project.image} languages={project.languages} description={project.description}/>
         ))}
     </div>
   )

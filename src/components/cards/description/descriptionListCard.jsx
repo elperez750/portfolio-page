@@ -16,7 +16,7 @@ function DescriptionListCard( {image, title, description }) {
         <h1>{title}</h1>
         
       </div>
-      <p className="text-dark_gray font-futura text-wrap align-middle m-5">{description}</p>
+      <p className="text-dark_gray font-futura m-5">{description}</p>
     </div>
     
     </>

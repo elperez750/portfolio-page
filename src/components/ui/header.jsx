@@ -2,7 +2,7 @@ import React from "react";
 
 function Header({ text }) {
   return (
-    <div className="ml-10 flex relative">
+    <div className="flex relative">
       <h1 className="text-center font-futura_bold text-7xl text-gray z-10 relative">
         {text}
       </h1>

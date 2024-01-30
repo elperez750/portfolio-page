@@ -1,10 +1,10 @@
 import { useState } from "react";
-import Home from "../src/components/sections/home";
-import About from "../src/components/sections/about";
-import Projects from "../src/components/sections/projects";
-import Contact from "../src/components/sections/contact";
-import Footer from "../src/components/ui/footer";
-import Navbar from "../src/components/ui/navbar";
+import Home from "./components/sections/home";
+import About from "./components/sections/about";
+import Projects from "./components/sections/projects";
+import Contact from "./components/sections/contact";
+import Footer from "./components/ui/footer";
+import Navbar from "./components/ui/navbar";
 
 function App() {
   return (
@@ -12,6 +12,8 @@ function App() {
       <div>
         <div className="h-full ">
           <Navbar />
+
+          
           <Home />
         </div>
 
@@ -31,7 +33,7 @@ function App() {
         </div>
 
         <Footer />
-        </div>
+        </div> 
     </>
   );
 }
