@@ -16,11 +16,13 @@ function App() {
           
           <Home />
         </div>
+     
 
         <div className="h-full">
           <About />
         </div>
-        <div className="h-full">
+        </div>
+        {/* <div className="h-full">
           <Projects />
         </div>
         <div className="h-full">
@@ -30,7 +32,7 @@ function App() {
           <Footer />
         </div>
 
-       </div>
+       </div> */}
     </>
   );
 }

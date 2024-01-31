@@ -2,7 +2,7 @@ import React from "react";
 import python from "/images/skills/python.png";
 import html from "/images/skills/html.png";
 import css from "/images/skills/css.png";
-import nodejs from "/images/skills/node.png";
+import nodejs from "/images/skills/nodejs.png";
 import sass from "/images/skills/sass.png";
 import git from "/images/skills/git.png";
 import react from "/images/skills/react.png";
@@ -77,9 +77,9 @@ const skills = [
 ];
 function SkillsList() {
   return (
-    <div className="grid grid-rows-3 grid-flow-col gap-4">
+    <div className="grid grid-rows-6 grid-flow-col tablet:grid tablet:grid-rows-4 tablet:grid-flow-col laptop:grid-rows-3 laptop:grid-flow-col gap-4">
       {skills.map((skill, index) => (
-        <SkillsCard img={skill.src} skill={skill.name} key={index} imgWidth={"100px"} imgHeight={"100px"} cardWidth={"160px"} cardHeight={"160px"} fontSize={"24px"} fontColor={"White"}/>
+        <SkillsCard img={skill.src} skill={skill.name} key={index} cardWidth={"160px"} cardHeight={"160px"} fontSize={"24px"} fontColor={"White"}/>
       ))}
     </div>
   );
