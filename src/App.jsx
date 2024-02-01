@@ -22,7 +22,7 @@ function App() {
           <About />
         </div>
         </div>
-        {/* <div className="h-full">
+        <div className="h-full">
           <Projects />
         </div>
         <div className="h-full">
@@ -32,7 +32,7 @@ function App() {
           <Footer />
         </div>
 
-       </div> */}
+       
     </>
   );
 }

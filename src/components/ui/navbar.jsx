@@ -19,7 +19,7 @@ function Navbar() {
 
   return (
     <div className="bg-black w-full fixed top-0 z-50 shadow">
-      <div className="max-w-6xl mx-auto px-4 h-20 flex justify-between items-center">
+      <div className="max-w-6xl mx-auto px-4 h-15 tablet:h-20 flex justify-between items-center">
         {/* Desktop Menu - Shown on large screens, hidden on small screens */}
         <ul className="hidden tablet:flex flex-row space-x-8 lg:space-x-48 text-xl tablet:text-xl laptop:text-2xl font-futura_bold text-gray ">
           <li><a href="#" onClick={() => changeActive("home")} className={`${activeLink === "home" ? "text-red" : "text-gray"}`}>Home</a></li>

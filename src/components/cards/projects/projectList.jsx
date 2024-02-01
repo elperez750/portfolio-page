@@ -5,7 +5,7 @@ import crownclothing from "/images/project-images/crown-clothing.png";
 import ProjectCard from './projectCard';
 import html from "/images/skills/html.png";
 import css from "/images/skills/css.png";
-import nodejs from "/images/skills/node.png";
+import nodejs from "/images/skills/nodejs.png";
 import sass from "/images/skills/sass.png";
 import git from "/images/skills/git.png";
 import react from "/images/skills/react.png";
@@ -158,7 +158,7 @@ const projects = [
 
 function ProjectList() {
   return (
-    <div className="flex space-between gap-10 justify-evenly mt-5">
+    <div className="flex flex-col laptop:flex-row gap-10 mt-5 desktop:mt-10">
         {projects.map(project => (
             <ProjectCard key={project.id} title={project.title} image={project.image} languages={project.languages} description={project.description}/>
         ))}
