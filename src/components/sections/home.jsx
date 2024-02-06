@@ -16,12 +16,12 @@ function Home() {
           className="absolute inset-0"
           style={{
             backgroundImage: `url(${cssBackground})`,
-            backgroundSize: 'cover',
-            filter: 'blur(10px)' 
+            backgroundSize: "cover",
+            filter: "brightness(0.5)",
           }}
         ></div>
 
-        <div className="relative z-10 flex flex-col tablet:flex-row items-center">
+        <div className="relative z-10 flex flex-col tablet:flex-row items-center pt-20">
           <img
             className="rounded-full hidden mr-10 h-40 w-40 tablet:h-72 tablet:block tablet:w-72 laptop:w-96 laptop:h-96 laptop:block desktop:block"
             src={selfPortrait}
@@ -31,15 +31,15 @@ function Home() {
             <h1 className="font-futura text-dark_gray">Hi, my name is</h1>
             <h1 className="text-red font-futura_medium">Elliott</h1>
             <h1 className="font-futura_demi">Aspiring Software Developer</h1>
-            <Button text="Contact Me" />
+            <a href="#contact">
+              <Button text="Contact Me" />
+            </a>
             <SocialList />
           </div>
         </div>
       </div>
-      
-      
-        <DescriptionList />
-     
+
+      <DescriptionList />
     </>
   );
 }

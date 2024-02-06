@@ -5,7 +5,7 @@ import Projects from "./components/sections/projects";
 import Contact from "./components/sections/contact";
 import Footer from "./components/ui/footer";
 import Navbar from "./components/ui/navbar";
-
+import Thanks from "./components/ui/thanks";
 function App() {
   return (
     <>
@@ -28,9 +28,11 @@ function App() {
         <div className="h-full">
           <Contact />
         </div>
+       
         <div className="h-full">
           <Footer />
         </div>
+
 
        
     </>

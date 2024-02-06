@@ -8,9 +8,9 @@ import instagram from "/images/socials/instagram.png"
 function SocialList() {
   return (
     <div>
-      <SocialCards image={linkedin}/>
-      <SocialCards image={instagram}/>
-      <SocialCards image={github}/>
+      <SocialCards image={linkedin} href= "https://www.linkedin.com/in/elliott-perez-32782a1a4/"/>
+      <SocialCards image={instagram} href= "https://www.instagram.com/elperez750/?next=%2F"/>
+      <SocialCards image={github} href="https://github.com/elperez750"/>
 
     </div>
   )

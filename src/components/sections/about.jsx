@@ -17,7 +17,9 @@ function About() {
 
           <div className="justify-center items-center">
             {" "}
+            <a href="#contact">
             <Button text="Contact Me" />
+            </a>
           </div>
         </div>
 

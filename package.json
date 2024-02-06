@@ -4,6 +4,7 @@
     "dev": "vite"
   },
   "dependencies": {
+    "@formspree/react": "^2.5.1",
     "@heroicons/react": "^2.1.1",
     "@types/react-typist": "^2.0.6",
     "autoprefixer": "^10.4.17",

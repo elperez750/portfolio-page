@@ -1,6 +1,8 @@
 import { React, useState } from "react";
 import Header from "../ui/header";
 import Button from "../ui/button";
+import { useForm, ValidationError } from '@formspree/react';
+import Thanks from "../ui/thanks";
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -9,16 +11,14 @@ function Contact() {
     message: "",
   });
 
+  const [state, handleSubmit] = useForm("mzbnernp");
+  if (state.succeeded) {
+      return <Thanks />
+  }
   const handleChange = (e) => {
    setFormData({...formData, [e.target.name]: e.target.value});
   };
 
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(formData);
-    setFormData({ name: "", email: "", message: "" });
-  };
 
 
   return (
@@ -31,6 +31,7 @@ function Contact() {
       </div>
 
       <form
+    
         className="flex flex-col mt-28 justify-center items-center gap-3 font-futura_demi"
         onSubmit={handleSubmit}
       >
@@ -38,6 +39,7 @@ function Contact() {
           <label
             htmlFor="name"
             className="block text-sm font-medium text-gray"
+            
           >
             Name
           </label>
@@ -94,7 +96,7 @@ function Contact() {
           />
         </div>
 
-        <Button text={"Submit"} />
+        <Button text={"Submit"} type="submit" />
 
        
       </form>
