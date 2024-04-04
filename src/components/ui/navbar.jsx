@@ -1,11 +1,44 @@
-import { React, useState, useEffect } from "react";
+import { React, useState, useEffect, useRef } from "react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 
 function Navbar() {
+  const homeRef = useRef(null);
+  const aboutRef = useRef(null);
+  const projectsRef = useRef(null);
+  const contactRef = useRef(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeLink, setActiveLink] = useState("");
 
 
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setActiveLink(entry.target.id);
+        }
+      });
+    }, { threshold: 0.5 }); // Adjust the threshold as needed
+  
+    const sections = [homeRef, aboutRef, projectsRef, contactRef];
+  
+    sections.forEach(section => {
+      if (section.current) {
+        observer.observe(section.current);
+      }
+    });
+  
+    return () => {
+      sections.forEach(section => {
+        if (section.current) {
+          observer.unobserve(section.current);
+        }
+      });
+    };
+  }, []);
+
+  
+  
   useEffect(() => {
     localStorage.getItem("activeLink") && setActiveLink(localStorage.getItem("activeLink"));
     

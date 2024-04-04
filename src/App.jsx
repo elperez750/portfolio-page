@@ -12,8 +12,6 @@ function App() {
       <div>
         <div className="h-full ">
           <Navbar />
-
-          
           <Home />
         </div>
      
