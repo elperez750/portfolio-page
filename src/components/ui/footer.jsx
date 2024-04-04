@@ -1,4 +1,5 @@
 import React from "react";
+import SocialList from "../cards/social-media/socialList";
 import githubFooter from "../../../public/images/socials/github_footer.png";
 import instagramFooter from "../../../public/images/socials/instagram_footer.png";
 import linkedinFooter from "../../../public/images/socials/linkedin_footer.png";

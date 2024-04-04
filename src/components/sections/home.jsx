@@ -4,7 +4,7 @@ import selfPortrait from "/images/self_portrait.jpg";
 import Button from "../ui/button";
 import SocialList from "../cards/social-media/socialList";
 import DescriptionList from "../cards/description/descriptionList";
-import homeRef from "../ui/navbar/homeRef";
+import { homeRef } from "../ui/navbar";
 
 function Home() {
   return (
