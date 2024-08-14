@@ -14,6 +14,7 @@ import typescript from "/images/skills/typescript.png";
 import tailwind from "/images/skills/tailwind.png";
 import bootstrap from "/images/skills/bootstrap.png";
 import javascript from "/images/skills/javascript.png";
+import ravenous from "/images/project-images/ravenous-site.png";
 
 const languagesSucasa = [
     
@@ -125,6 +126,30 @@ const languagesCrownclothing = [
 
     ]
 
+    const languagesRavenous = [
+        {
+            image: html,
+            name: "HTML",
+        },
+        {
+            image: tailwind,
+            name: "Tailwind CSS",
+        },
+        {
+            image: typescript,
+            name: "TypeScript",
+        },
+        {
+            image: react,
+            name: "React",
+        },
+        {
+            image: git,
+            name: "Git",
+        },
+       
+    ]
+
 
 const projects = [
     {
@@ -148,6 +173,13 @@ const projects = [
         languages: languagesCrownclothing,
         description: "Ecommerce website with all kinds of products. Crown Clothing is a website where you can find all kinds of clothing you want to buy. Organized into easily navigable categories and subcategories"
     },
+    {
+        id: 4,
+        title: "Ravenous Review Site",
+        image: ravenous,
+        languages: languagesRavenous,
+        description:"Yelp clone that allows users to search for restaurants based on location and type of food and other Business based on reviews.  The application is built using React, TypeScript, and Tailwind CSS."
+    }
     
     
 ]
@@ -157,13 +189,19 @@ const projects = [
 
 
 function ProjectList() {
-  return (
-    <div className="flex flex-col laptop:flex-row gap-10 mt-5 desktop:mt-10">
-        {projects.map(project => (
-            <ProjectCard key={project.id} title={project.title} image={project.image} languages={project.languages} description={project.description}/>
+    return (
+      <div className="grid grid-cols-1 tablet:grid-cols-2 gap-10 mt-5 desktop:mt-10">
+        {projects.map((project) => (
+          <ProjectCard
+            key={project.id}
+            title={project.title}
+            image={project.image}
+            languages={project.languages}
+            description={project.description}
+          />
         ))}
-    </div>
-  )
-}
+      </div>
+    );
+  }
 
 export default ProjectList

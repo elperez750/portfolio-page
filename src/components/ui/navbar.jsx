@@ -2,10 +2,12 @@ import React, { useState, useEffect, useRef } from "react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 
 function Navbar() {
-  const homeRef = useRef(null);
-  const aboutRef = useRef(null);
-  const projectsRef = useRef(null);
-  const contactRef = useRef(null);
+
+const homeRef = useRef(null);
+const aboutRef = useRef(null);
+const projectsRef = useRef(null);
+const contactRef = useRef(null);
+
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeLink, setActiveLink] = useState("");
 
@@ -87,4 +89,8 @@ function Navbar() {
   );
 }
 
+
+
 export default Navbar;
+
+
