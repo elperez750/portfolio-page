@@ -178,7 +178,8 @@ const projects = [
         title: "Ravenous Review Site",
         image: ravenous,
         languages: languagesRavenous,
-        description:"Yelp clone that allows users to search for restaurants based on location and type of food and other Business based on reviews.  The application is built using React, TypeScript, and Tailwind CSS."
+        description:"Yelp clone that allows users to search for restaurants based on location and type of food and other Business based on reviews.  The application is built using React, TypeScript, and Tailwind CSS.",
+        link: "https://ravenous-elperez750s-projects.vercel.app/"
     }
     
     
@@ -198,6 +199,7 @@ function ProjectList() {
             image={project.image}
             languages={project.languages}
             description={project.description}
+            link={project.link} // Link is passed here
           />
         ))}
       </div>

@@ -1,19 +1,12 @@
 import React from "react";
 import ProjectSkillsCard from "../skills/projectSkillsCard";
 
-function ProjectCard({ title, image, languages, description }) {
-  return (
+function ProjectCard({ title, image, languages, description, link }) {
+  const cardContent = (
     <div className="relative desktop:hover:scale-105 transition-all duration-500 cursor-pointer p-3">
       <div className="absolute inset-0 bg-soft_blue w-auto rounded-2xl z-0 left-10 top-6"></div>
-      <div className="relative z-10 font-futura">
-        {/* Set fixed dimensions and use object-fit to maintain aspect ratio */}
-        <div className="w-full h-48 tablet:h-64 overflow-hidden">
-          <img
-            src={image}
-            alt="project"
-            className="w-full h-full object-cover rounded-t-2xl"
-          />
-        </div>
+      <div className="relative z-10 font-futura ">
+        <img src={image} alt="project" className="w-full rounded-t-2xl h-48 object-cover" />
         <div className="bg-gray p-4 rounded-b-2xl">
           <h1 className="text-center text-lg desktop:text-3xl font-bold font-futura_demi text-blue mb-5">
             {title}
@@ -32,6 +25,14 @@ function ProjectCard({ title, image, languages, description }) {
         </div>
       </div>
     </div>
+  );
+
+  return link ? (
+    <a href={link} target="_blank" rel="noopener noreferrer">
+      {cardContent}
+    </a>
+  ) : (
+    cardContent
   );
 }
 
