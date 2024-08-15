@@ -133,7 +133,7 @@ const languagesCrownclothing = [
         },
         {
             image: tailwind,
-            name: "Tailwind CSS",
+            name: "Tailwind",
         },
         {
             image: typescript,
@@ -158,6 +158,7 @@ const projects = [
         image: sucasa,
         languages: languagesSucasa,
         description: "Sucasa is a website that introduces and explains the process of painting with the company Sucasa Paint and Roofcare. The website is built using HTML, CSS, TypeScript, and Bootstrap.",
+        link: "https://sucasa-paint-osert47nn-elperez750s-projects.vercel.app/"
     },
     {
         id:2,
@@ -171,7 +172,8 @@ const projects = [
         title: "Crown Clothing",
         image: crownclothing,
         languages: languagesCrownclothing,
-        description: "Ecommerce website with all kinds of products. Crown Clothing is a website where you can find all kinds of clothing you want to buy. Organized into easily navigable categories and subcategories"
+        description: "Ecommerce website with all kinds of products. Crown Clothing is a website where you can find all kinds of clothing you want to buy. Organized into easily navigable categories and subcategories",
+        link: "https://crown-clothing-git-master-elperez750s-projects.vercel.app/"
     },
     {
         id: 4,
