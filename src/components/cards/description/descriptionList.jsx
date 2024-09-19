@@ -1,5 +1,5 @@
 import React from "react";
-import DescriptionListCard from "./DescriptionListCard";
+import DescriptionListCard from "./descriptionListCard";
 import ui from "/images/description/ui.png";
 import frontend from "/images/description/frontend.png";
 import backend from "/images/description/backend.png";
