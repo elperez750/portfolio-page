@@ -1,5 +1,5 @@
 import React from 'react'
-import ProjectCard from './ProjectCard'
+import ProjectCard from './projectCard'
 
 // Import project images
 import sucasa from "/images/project-images/sucasa.png"

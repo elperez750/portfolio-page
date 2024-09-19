@@ -1,5 +1,5 @@
 import React from "react";
-import ProjectSkillsCard from "../skills/ProjectSkillsCard";
+import ProjectSkillsCard from "../skills/projectSkillsCard";
 
 function ProjectCard({ title, image, languages, description, link }) {
   const cardContent = (

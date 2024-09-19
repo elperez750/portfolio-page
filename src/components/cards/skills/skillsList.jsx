@@ -1,5 +1,5 @@
 import React from "react";
-import SkillsCard from "./SkillsCard";
+import SkillsCard from "./skillsCard";
 
 // Import all skill icons
 import python from "/images/skills/python.png";
