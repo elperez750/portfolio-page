@@ -2,16 +2,13 @@ import React, { useState, useEffect, useRef } from "react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 
 function Navbar() {
-
-const homeRef = useRef(null);
-const aboutRef = useRef(null);
-const projectsRef = useRef(null);
-const contactRef = useRef(null);
+  const homeRef = useRef(null);
+  const aboutRef = useRef(null);
+  const projectsRef = useRef(null);
+  const contactRef = useRef(null);
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeLink, setActiveLink] = useState("");
-
-
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -20,16 +17,16 @@ const contactRef = useRef(null);
           setActiveLink(entry.target.id);
         }
       });
-    }, { threshold: 0.5 }); // Adjust the threshold as needed
-  
+    }, { threshold: 0.5 });
+
     const sections = [homeRef, aboutRef, projectsRef, contactRef];
-  
+
     sections.forEach(section => {
       if (section.current) {
         observer.observe(section.current);
       }
     });
-  
+
     return () => {
       sections.forEach(section => {
         if (section.current) {
@@ -39,58 +36,93 @@ const contactRef = useRef(null);
     };
   }, []);
 
-  
-  
   useEffect(() => {
-    localStorage.getItem("activeLink") && setActiveLink(localStorage.getItem("activeLink"));
-    
+    const storedActiveLink = localStorage.getItem("activeLink");
+    if (storedActiveLink) {
+      setActiveLink(storedActiveLink);
+    }
   }, []);
-
 
   const changeActive = (link) => {
     setActiveLink(link);
     localStorage.setItem("activeLink", link);
+    setIsMobileMenuOpen(false);
   }
 
+  const navItems = [
+    { id: "home", label: "Home" },
+    { id: "about", label: "About" },
+    { id: "projects", label: "Projects" },
+    { id: "contact", label: "Contact" },
+  ];
+
   return (
-    <div className="bg-black w-full fixed top-0 z-50 shadow">
-      <div className="max-w-6xl mx-auto px-4 h-15 tablet:h-20 flex justify-between items-center">
-        {/* Desktop Menu - Shown on large screens, hidden on small screens */}
-        <ul className="hidden tablet:flex flex-row space-x-8 lg:space-x-48 text-xl tablet:text-xl laptop:text-2xl font-futura_bold text-gray ">
-          <li><a href="#" onClick={() => changeActive("home")} className={`${activeLink === "home" ? "text-red" : "text-gray"}`}>Home</a></li>
-          <li><a href="#about" onClick={() => changeActive("about")} className={`${activeLink === "about" ? "text-red" : "text-gray"}`}>About</a></li>
-          <li><a href="#projects" onClick={() => changeActive("projects")} className={`${activeLink === "projects" ? "text-red" : "text-gray"}`}>Projects</a></li>
-          <li><a href="#contact" onClick={() => changeActive("contact")} className={`${activeLink === "contact" ? "text-red" : "text-gray"}`}>Contact</a></li>
+    <nav className="bg-black bg-opacity-90 backdrop-blur-md fixed top-0 left-0 right-0 z-50 shadow-lg">
+      <div className="max-w-6xl mx-auto px-4 h-16 tablet:h-20 flex justify-between items-center">
+        <a href="#" className="text-cyan-400 text-2xl font-futura_bold hover:text-cyan-300 transition-colors duration-300">
+          <span className="sr-only">Your Name</span>
+          EP
+        </a>
+        
+        {/* Desktop Menu */}
+        <ul className="hidden tablet:flex space-x-8 text-lg font-futura_bold">
+          {navItems.map((item) => (
+            <li key={item.id}>
+              <a
+                href={`#${item.id}`}
+                onClick={() => changeActive(item.id)}
+                className={`${
+                  activeLink === item.id
+                    ? "text-cyan-400 border-b-2 border-cyan-400"
+                    : "text-cyan-200 hover:text-cyan-100"
+                } transition-colors duration-300 py-2`}
+              >
+                {item.label}
+              </a>
+            </li>
+          ))}
         </ul>
 
-        {/* Hamburger Icon - Hidden on large screens, shown on small screens */}
+        {/* Mobile Menu Button */}
         <div className="tablet:hidden">
-          <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="text-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400 rounded-md p-2"
+            aria-label="Toggle mobile menu"
+          >
             {isMobileMenuOpen ? (
-              <XMarkIcon className="h-8 w-8 text-white" />
+              <XMarkIcon className="h-6 w-6" />
             ) : (
-              <Bars3Icon className="h-8 w-8 text-white" />
+              <Bars3Icon className="h-6 w-6" />
             )}
           </button>
         </div>
-
-        {/* Mobile Menu - Hidden by default, shown when hamburger is clicked */}
-        {isMobileMenuOpen && (
-          <ul className="flex flex-col absolute top-full w-full bg-black text-xl font-futura_bold fixed" >
-            <li onClick={() => changeActive("home")} className={`${activeLink === "home" ? "text-red" : "text-gray"} p-2 border-b border-gray`}><a href="#">Home</a></li>
-            <li onClick={() => changeActive("about")} className={`${activeLink === "about" ? "text-red" : "text-gray"} p-2 border-b border-gray`}><a href="#about">About</a></li>
-            <li onClick={() => changeActive("projects")} className={`${activeLink === "projects" ? "text-red" : "text-gray"} p-2 border-b border-gray`}><a href="#projects">Projects</a></li>
-            <li onClick={() => changeActive("contact")} className={`${activeLink === "contact" ? "text-red" : "text-gray"} p-2 border-b border-gray`}><a href="#contact">Contact</a></li>
-
-          </ul>
-        )}
       </div>
-    </div>
+
+      {/* Mobile Menu */}
+      {isMobileMenuOpen && (
+        <div className="tablet:hidden">
+          <ul className="bg-black bg-opacity-90 backdrop-blur-md py-2">
+            {navItems.map((item) => (
+              <li key={item.id}>
+                <a
+                  href={`#${item.id}`}
+                  onClick={() => changeActive(item.id)}
+                  className={`${
+                    activeLink === item.id
+                      ? "text-cyan-400 border-l-4 border-cyan-400"
+                      : "text-cyan-200 hover:text-cyan-100"
+                  } block py-2 px-4 transition-colors duration-300`}
+                >
+                  {item.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </nav>
   );
 }
 
-
-
 export default Navbar;
-
-

@@ -1,38 +1,52 @@
 import React from "react";
-import ProjectSkillsCard from "../skills/projectSkillsCard";
+import ProjectSkillsCard from "../skills/ProjectSkillsCard";
 
 function ProjectCard({ title, image, languages, description, link }) {
   const cardContent = (
-    <div className="relative desktop:hover:scale-105 transition-all duration-500 cursor-pointer p-3">
-      <div className="absolute inset-0 bg-soft_blue w-auto rounded-2xl z-0 left-10 top-6"></div>
-      <div className="relative z-10 font-futura ">
-        <img src={image} alt="project" className="w-full rounded-t-2xl h-48 object-cover" />
-        <div className="bg-gray p-4 rounded-b-2xl">
-          <h1 className="text-center text-lg desktop:text-3xl font-bold font-futura_demi text-blue mb-5">
-            {title}
-          </h1>
-          <p className="pt-5 pb-5 text-center text-base">{description}</p>
-          <div className="grid grid-cols-2 grid-flow-rows gap-4 tablet:grid-cols-4 tablet:grid-flow-row">
-            {languages.map((language, index) => (
-              <ProjectSkillsCard
-                img={language.image}
-                skill={language.name}
-                key={index}
-                fontColor={"#4C516D"}
-              />
-            ))}
-          </div>
+    <div className="bg-gray-800 rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-2xl">
+      <div className="relative aspect-video overflow-hidden">
+        <img
+          src={image}
+          alt={title}
+          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+        />
+        <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          <span className="text-white text-lg font-bold">View Project</span>
         </div>
+      </div>
+      <div className="p-6">
+        <h2 className="text-2xl font-bold text-blue-300 mb-2">{title}</h2>
+        <p className="text-sm text-gray-300 mb-4">{description}</p>
+        <div className="flex flex-wrap gap-2 mb-4">
+          {languages.map((language, index) => (
+            <ProjectSkillsCard
+              key={index}
+              img={language.image}
+              skill={language.name}
+            />
+          ))}
+        </div>
+        {link && (
+          <a 
+            href={link} 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors duration-300"
+          >
+            View Project
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+              <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
+            </svg>
+          </a>
+        )}
       </div>
     </div>
   );
 
-  return link ? (
-    <a href={link} target="_blank" rel="noopener noreferrer">
+  return (
+    <div className="group transform transition-transform duration-300 hover:-translate-y-2">
       {cardContent}
-    </a>
-  ) : (
-    cardContent
+    </div>
   );
 }
 

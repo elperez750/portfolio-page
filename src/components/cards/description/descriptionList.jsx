@@ -1,34 +1,51 @@
 import React from "react";
-import DescriptionListCard from "./descriptionListCard";
+import DescriptionListCard from "./DescriptionListCard";
 import ui from "/images/description/ui.png";
 import frontend from "/images/description/frontend.png";
 import backend from "/images/description/backend.png";
 import fullstack from "/images/description/fullstack.png";
 
 function DescriptionList() {
+  const descriptions = [
+    {
+      image: frontend,
+      title: "Frontend Wizard",
+      description: "With knowledge of HTML, CSS, JavaScript, and React, I can design beautiful interfaces",
+      icon: "🎨"
+    },
+    {
+      image: backend,
+      title: "Backend Expert",
+      description: "My expertise in NodeJS and MongoDB will help facilitate the flow of data.",
+      icon: "🔧"
+    },
+    {
+      image: fullstack,
+      title: "FullStack Guru",
+      description: "Combining my Frontend and Backend knowledge, I can build any application",
+      icon: "🚀"
+    },
+    {
+      image: ui,
+      title: "UI/UX Enthusiast",
+      description: "Creating user-friendly and aesthetically pleasing interfaces is my number one goal.",
+      icon: "🎭"
+    }
+  ];
+
   return (
-    <div className="bg-gradient-to-l from-blue to-black w-full">
-      <div className="flex-col tablet:flex tablet:flex-col laptop:flex laptop:flex-row  justify-center items-center text-center">
-        <DescriptionListCard
-          image={frontend}
-          title="Frontend Wizard"
-          description="With Knowledge of HTML, CSS, JavaScript, as well as React, I can design beautiful interfaces"
-        />
-        <DescriptionListCard
-          image={backend}
-          title="Backend Expert"
-          description="My expertise in NodeJS and MongoDB will help facilitate the flow of data."
-        />
-        <DescriptionListCard
-          image={fullstack}
-          title="FullStack Guru"
-          description="Combining my Frontend and Backend knowledge, I can build any fullstack application for your needs"
-        />
-        <DescriptionListCard
-          image={ui}
-          title="UI/UX Enthusiast"
-          description="Creating user friendly and aesthetically pleasing interfaces is my number one goal."
-        />
+    <div className="container mx-auto px-4 py-16">
+      <h2 className="text-3xl font-bold text-center text-blue-300 mb-12">My Expertise</h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {descriptions.map((item, index) => (
+          <DescriptionListCard
+            key={index}
+            image={item.image}
+            title={item.title}
+            description={item.description}
+            icon={item.icon}
+          />
+        ))}
       </div>
     </div>
   );

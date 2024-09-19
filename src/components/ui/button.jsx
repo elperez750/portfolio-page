@@ -1,11 +1,34 @@
 import React from 'react'
 
-function Button({text}) {
+
+
+export default function Button({ text, type = 'button', onClick, className = '' }) {
   return (
-  
-      <button type="submit" className='bg-red px-2 py-2 tablet:px-10 tablet:py-2 laptop:px-10 laptop:py-2 rounded-sm font-futura_demi text-lg text-white'>{text} </button>
-  
+    <button
+      type={type}
+      onClick={onClick}
+      className={`
+        bg-blue-600 
+        hover:bg-blue-700 
+        text-white 
+        font-futura_demi 
+        text-lg 
+        px-6 
+        py-2 
+        rounded-full 
+        transition 
+        duration-300 
+        ease-in-out 
+        transform 
+        hover:scale-105 
+        focus:outline-none 
+        focus:ring-2 
+        focus:ring-blue-500 
+        focus:ring-opacity-50
+        ${className}
+      `}
+    >
+      {text}
+    </button>
   )
 }
-
-export default Button

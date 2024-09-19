@@ -1,11 +1,18 @@
 import React from 'react'
 
-function SkillsCard({img, skill, fontColor}){
+function SkillsCard({ img, skill }) {
   return (
-    <div className="flex flex-col border border-gray rounded-lg justify-center items-center shadow hover:shadow-2xl cursor-pointer w-28 h-28 desktop:w-48 desktop:h-48" >
-        <img src={img} alt={skill} className="w-12 h-12 tablet:w-18 tablet:h-auto desktop:w-32 desktop:h-auto" />
-
-        <h3 className="text-gray font-futura_bold text-xl desktop:text-3xl" style={{ color: fontColor }} >{skill}</h3>
+    <div className="flex flex-col items-center justify-center p-6 bg-gray-800 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-105 cursor-pointer w-full h-full min-h-[200px]">
+      <div className="relative w-20 h-20 mb-4">
+        <img 
+          src={img} 
+          alt={skill} 
+          className="w-full h-full object-contain"
+        />
+      </div>
+      <h3 className="text-center font-futura_bold text-lg sm:text-xl lg:text-2xl text-blue-300">
+        {skill}
+      </h3>
     </div>
   )
 }
