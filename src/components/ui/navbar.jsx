@@ -60,7 +60,7 @@ function Navbar() {
     <nav className="bg-black bg-opacity-90 backdrop-blur-md fixed top-0 left-0 right-0 z-50 shadow-lg">
       <div className="max-w-6xl mx-auto px-4 h-16 tablet:h-20 flex justify-between items-center">
         <a href="#" className="text-cyan-400 text-2xl font-futura_bold hover:text-cyan-300 transition-colors duration-300">
-          <span className="sr-only">Your Name</span>
+          <span className="sr-only">Elliott Perez</span>
           EP
         </a>
         

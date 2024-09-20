@@ -7,6 +7,7 @@ import crownclothing from "/images/project-images/crown-clothing.png"
 import ravenous from "/images/project-images/ravenous-site.png"
 import kingsman from "/images/project-images/kingsman.png"
 import jamming from "/images/project-images/jamming.png"
+import nike from "/images/project-images/nike.png"
 // Import skill icons
 import html from "/images/skills/html.png"
 import css from "/images/skills/css.png"
@@ -98,6 +99,21 @@ const projects = [
     ],
     description: "Jamming is a website that allows users to search for songs on Spotify, create a playlist, and save it to their Spotify account. The website is built using HTML, CSS, TypeScript, and React.",
     link: "https://jamming-elperez750s-projects.vercel.app/"
+  },
+  {
+    id:5,
+    title: "Nike Clone",
+    image: nike,
+    languages: [
+      { image:html, name: "HTML"},
+      { image:tailwind, name: "Tailwind"},
+      { image: git, name:"Git"},
+      { image: react, name: "React" },
+      { image: javascript, name: "Javascript" },
+
+    ],
+    description: "This application was a Nike clone, styled using Tailwind CSS. It served as a practice project to enhance skills in responsive design, ensuring that the layout adapted across various devices and screen sizes. ",
+    link: "https://nike-rho-fawn.vercel.app/"
   }
 ]
 
