@@ -24,7 +24,7 @@ function Contact() {
   return (
     <section
       id="contact"
-      className="bg-gradient-to-r from-gray-900 to-black min-h-screen py-20"
+      className="min-h-screen py-20"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
         <Header text="Contact Me" className="text-blue-300 mb-12 text-left text-4xl lg:text-5xl" />

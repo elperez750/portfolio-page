@@ -4,7 +4,7 @@ import ProjectList from "../cards/projects/projectList";
 
 function Projects() {
   return (
-    <section id="projects" className="bg-gradient-to-r from-gray-900 to-black min-h-screen py-20">
+    <section id="projects" className="min-h-screen py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <Header text="My Projects" className="text-blue-600 mb-12 text-center" />
         <div className="max-w-7xl mx-auto">

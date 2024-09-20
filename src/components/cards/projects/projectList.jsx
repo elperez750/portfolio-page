@@ -6,7 +6,7 @@ import sucasa from "/images/project-images/sucasa.png"
 import crownclothing from "/images/project-images/crown-clothing.png"
 import ravenous from "/images/project-images/ravenous-site.png"
 import kingsman from "/images/project-images/kingsman.png"
-
+import jamming from "/images/project-images/jamming.png"
 // Import skill icons
 import html from "/images/skills/html.png"
 import css from "/images/skills/css.png"
@@ -81,6 +81,23 @@ const projects = [
     ],
     description: "Yelp clone that allows users to search for restaurants based on location and type of food and other Business based on reviews. The application is built using React, TypeScript, and Tailwind CSS.",
     link: "https://ravenous-elperez750s-projects.vercel.app/"
+  },
+  {
+    id: 5,
+    title: "Jamming",
+    image: jamming,
+    languages: [
+      { image: html, name: "HTML" },
+      { image: css, name: "CSS" },
+      { image: git, name: "Git" },
+      { image: react, name: "React" },
+      { image: typescript, name: "TypeScript" },
+      { image: next, name: "Next.js" },
+      { image: tailwind, name: "Tailwind" },
+
+    ],
+    description: "Jamming is a website that allows users to search for songs on Spotify, create a playlist, and save it to their Spotify account. The website is built using HTML, CSS, TypeScript, and React.",
+    link: "https://jamming-elperez750s-projects.vercel.app/"
   }
 ]
 

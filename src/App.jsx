@@ -5,7 +5,7 @@ import Projects from "./components/sections/projects";
 import Contact from "./components/sections/contact";
 import Footer from "./components/ui/footer";
 import Navbar from "./components/ui/navbar";
-import Thanks from "./components/ui/thanks";
+
 function App() {
   const homeRef = useRef(null);
   const aboutRef = useRef(null);
@@ -13,33 +13,24 @@ function App() {
   const contactRef = useRef(null);
 
   return (
-    <>
-      <div>
-        <div className="h-full ">
-          <Navbar
-            homeRef={homeRef}
-            aboutRef={aboutRef}
-            projectsRef={projectsRef}
-            contactRef={contactRef}
-          />
+    <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black text-white">
+      
+      <div className="relative z-10">
+        <Navbar
+          homeRef={homeRef}
+          aboutRef={aboutRef}
+          projectsRef={projectsRef}
+          contactRef={contactRef}
+        />
+        <main>
           <Home homeRef={homeRef} />
-        </div>
-
-        <div className="h-full">
           <About aboutRef={aboutRef} />
-        </div>
-      </div>
-      <div className="h-full">
-        <Projects projectsRef={projectsRef} />
-      </div>
-      <div className="h-full">
-        <Contact contactRef={contactRef} />
-      </div>
-
-      <div className="h-full">
+          <Projects projectsRef={projectsRef} />
+          <Contact contactRef={contactRef} />
+        </main>
         <Footer />
       </div>
-    </>
+    </div>
   );
 }
 

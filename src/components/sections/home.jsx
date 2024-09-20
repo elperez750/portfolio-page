@@ -1,26 +1,52 @@
-import React from "react";
+import React, { useState, useEffect } from 'react';
 import { motion } from "framer-motion";
 import Button from "../ui/button";
 import SocialList from "../cards/social-media/socialList";
 import DescriptionList from "../cards/description/descriptionList";
+
+const TypingAnimation = ({ text, speed = 100 }) => {
+  const [displayText, setDisplayText] = useState('');
+
+  useEffect(() => {
+    let i = 0;
+    const typingInterval = setInterval(() => {
+      if (i < text.length) {
+        setDisplayText((prev) => prev + text.charAt(i));
+        i++;
+      } else {
+        clearInterval(typingInterval);
+      }
+    }, speed);
+
+    return () => clearInterval(typingInterval);
+  }, [text, speed]);
+
+  return (
+    <h3 className="text-blue-100 text-2xl md:text-3xl lg:text-4xl font-futura_demi mb-6">
+      {displayText}
+      <span className="animate-blink">|</span>
+    </h3>
+  );
+};
 
 function Home({ homeRef }) {
   return (
     <section
       ref={homeRef}
       id="home"
-      className="flex flex-col justify-start"
+      className="relative"
     >
-      <div className="relative min-h-screen bg-gradient-to-br from-gray-900 to-black flex items-center justify-center">
-        <div className="absolute inset-0 opacity-10">
-          <img
-            src="/images/css_background.jpeg"
-            alt="Background"
-            className="w-full h-full object-cover"
-          />
-        </div>
+      <div className="absolute inset-0 w-full">
+        <img
+          src="/images/css_background.jpeg"
+          alt="Background"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black opacity-70"></div>
+      </div>
 
-        <div className="container mx-auto px-4 z-10 text-center">
+      <div className="relative z-10 min-h-screen flex flex-col justify-center items-center">
+        <div className="container mx-auto px-4 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -46,9 +72,7 @@ function Home({ homeRef }) {
             <h1 className="text-white text-4xl md:text-5xl lg:text-7xl font-futura_medium mb-2">
               Elliott
             </h1>
-            <h3 className="text-blue-100 text-2xl md:text-3xl lg:text-4xl font-futura_demi mb-6">
-              Aspiring Software Developer
-            </h3>
+            <TypingAnimation text="Aspiring Software Developer" />
             <div className="flex flex-col items-center gap-4">
               <a href="#contact">
                 <Button text="Contact Me" className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-3 rounded-full transition duration-300 ease-in-out transform hover:scale-105" />
@@ -59,14 +83,7 @@ function Home({ homeRef }) {
         </div>
       </div>
 
-      <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.4 }}
-        className="w-full bg-gradient-to-b from-gray-900 to-black py-16"
-      >
-        <DescriptionList />
-      </motion.div>
+       
     </section>
   );
 }
