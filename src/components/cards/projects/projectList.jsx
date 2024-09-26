@@ -69,22 +69,9 @@ const projects = [
     description: "Ecommerce website with all kinds of products. Crown Clothing is a website where you can find all kinds of clothing you want to buy. Organized into easily navigable categories and subcategories",
     link: "https://crown-clothing-git-master-elperez750s-projects.vercel.app/"
   },
+  
   {
     id: 4,
-    title: "Ravenous Review Site",
-    image: ravenous,
-    languages: [
-      { image: html, name: "HTML" },
-      { image: tailwind, name: "Tailwind" },
-      { image: typescript, name: "TypeScript" },
-      { image: react, name: "React" },
-      { image: git, name: "Git" },
-    ],
-    description: "Yelp clone that allows users to search for restaurants based on location and type of food and other Business based on reviews. The application is built using React, TypeScript, and Tailwind CSS.",
-    link: "https://ravenous-elperez750s-projects.vercel.app/"
-  },
-  {
-    id: 5,
     title: "Jamming",
     image: jamming,
     languages: [
