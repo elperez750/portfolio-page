@@ -20,6 +20,8 @@ import tailwind from "/images/skills/tailwind.png"
 import bootstrap from "/images/skills/bootstrap.png"
 import javascript from "/images/skills/javascript.png"
 import next from "/images/skills/nextjs.png"
+import python from "/images/skills/python.png"
+import chess from "/images/project-images/chess.png"
 
 const projects = [
   {
@@ -101,6 +103,16 @@ const projects = [
     ],
     description: "This application was a Nike clone, styled using Tailwind CSS. It served as a practice project to enhance skills in responsive design, ensuring that the layout adapted across various devices and screen sizes. ",
     link: "https://nike-rho-fawn.vercel.app/"
+  },
+  {
+    id: 6, 
+    title: "Chess Game",
+    image: chess,
+    languages: [
+      {image: python , name: "Python"},
+    ],
+    description: "This chess game was created using Python. It was a practice project to enhance skills in Python programming and to learn more about the game of chess. It was a capstone project for my STEM 298 class at Everett Community College.",
+    link: "https://github.com/elperez750/chess"
   }
 ]
 
