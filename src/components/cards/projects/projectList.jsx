@@ -4,14 +4,13 @@ import ProjectCard from './projectCard'
 // Import project images
 import sucasa from "/images/project-images/sucasa.png"
 import crownclothing from "/images/project-images/crown-clothing.png"
-import ravenous from "/images/project-images/ravenous-site.png"
 import kingsman from "/images/project-images/kingsman.png"
 import jamming from "/images/project-images/jamming.png"
 import nike from "/images/project-images/nike.png"
+import wta from "/images/project-images/wta.png"
 // Import skill icons
 import html from "/images/skills/html.png"
 import css from "/images/skills/css.png"
-import nodejs from "/images/skills/nodejs.png"
 import sass from "/images/skills/sass.png"
 import git from "/images/skills/git.png"
 import react from "/images/skills/react.png"
@@ -22,6 +21,7 @@ import javascript from "/images/skills/javascript.png"
 import next from "/images/skills/nextjs.png"
 import python from "/images/skills/python.png"
 import chess from "/images/project-images/chess.png"
+import nodejs from "/images/skills/nodejs.png"
 
 const projects = [
   {
@@ -41,8 +41,8 @@ const projects = [
   },
   {
     id: 2,
-    title: "Kingsman Barber",
-    image: kingsman,
+    title: "Washington State Trail App",
+    image: wta,
     languages: [
       { image: html, name: "HTML" },
       { image: css, name: "CSS" },
@@ -50,10 +50,10 @@ const projects = [
       { image: git, name: "Git" },
       { image: react, name: "React" },
       { image: typescript, name: "TypeScript" },
-      { image: next, name: "Next.js" },
+      { image: nodejs, name: "Node.js" },
     ],
-    description: "Kingsman Barber is a website for a barber shop. Potential clients can view images of past clients, view testimonials, and book an appointment. The website is built using HTML, CSS, TypeScript, and Tailwind CSS.",
-    link: "https://kingsmen-barber-site.vercel.app/"
+    description: "The Washington State trail app is a website that allows users to search for trails in Washington State. The website is built using HTML, CSS, TypeScript, React, and Node.js.",
+    link: "https://trail-finder-washington-client.vercel.app"
   },
   {
     id: 3,
